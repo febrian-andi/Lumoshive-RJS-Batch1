@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <!-- Logo -->
+      <img class="logo" src="/assets/images/logo.png" alt="logo" />
+
+      <!-- Hamburger Menu (Materi Tambahan) -->
+      <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <!---- Nav Links ---->
+      <ul class="nav-links">
+        <li>
+          <a href="/"> Home</a>
+        </li>
+        <li>
+          <a href="/">Our Customers</a>
+        </li>
+        <li>
+          <a href="/">Contact Us</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="header display-grid">
+      <!-- Header Content -->
+      <div class="header-content">
+        <div class="header-text">
+          <h1>
+            We Code <br />
+            We Deliver
+          </h1>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores
+            dignissimos labore nesciunt.
+          </p>
+        </div>
+      </div>
+
+      <!-- Header Image -->
+      <div class="header-img"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Customer Section -->
+      <section class="small-container section-gap">
+        <div class="display-grid">
+          <!-- Customer Content -->
+          <div class="customer-section">
+            <div>
+              <h2 class="title">Our Customers<br />are our biggest fans</h2>
+              <p class="desc">
+                We have helped startups around the globe as well as fortune 500
+                companies
+              </p>
+            </div>
+          </div>
+
+          <!-- Company List -->
+          <div class="company-list">
+            <img
+              class="company-logo"
+              src="/assets/images/image_9.png"
+              alt="company-1"
+            />
+            <img
+              class="company-logo"
+              src="/assets/images/image_8.png"
+              alt="company-1"
+            />
+            <img
+              class="company-logo"
+              src="/assets/images/image_7.png"
+              alt="company-1"
+            />
+            <img
+              class="company-logo"
+              src="/assets/images/image_27.png"
+              alt="company-1"
+            />
+            <img
+              class="company-logo"
+              src="/assets/images/image_26.png"
+              alt="company-1"
+            />
+            <img
+              class="company-logo"
+              src="/assets/images/image_25.png"
+              alt="company-1"
+            />
+            <img
+              class="company-logo"
+              src="/assets/images/image_24.png"
+              alt="company-1"
+            />
+            <img
+              class="company-logo"
+              src="/assets/images/image_23.png"
+              alt="company-1"
+            />
+            <img
+              class="company-logo"
+              src="/assets/images/image_22.png"
+              alt="company-1"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Service Section -->
+      <section class="display-grid section-gap">
+        <!-- Service Card -->
+        <div class="service-card">
+          <div class="service-content">
+            <h2 class="title">Mobile<br />Application</h2>
+            <p class="desc">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service Text -->
+        <div class="service-text">
+          <div>
+            <h2 class="title">How We Work?</h2>
+            <p class="desc">Let's discuss what projects you have in mind</p>
+            <a href="/" class="button">More</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="display-grid section-gap">
+        <!-- Contact Map -->
+        <div>
+          <iframe
+            style="height: 100%; width: 100%; border: 0"
+            frameborder="0"
+            src="https://www.google.com/maps/embed/v1/place?q=pt+lumos+inisiatif+indonesia&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+          ></iframe>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <h2 class="title">Contant Us</h2>
+          <form>
+            <div class="input-group">
+              <label for="email"> Email </label>
+              <input class="input" type="email" name="email" id="email" />
+            </div>
+            <div class="input-group">
+              <label for="message"> Message </label>
+              <textarea class="input" name="message" id="message"></textarea>
+            </div>
+            <button class="button">Submit</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        Lumoshive Academy | PT Lumos Inisiatif Indonesia
+      </footer>
+    </main>
+  </body>
+</html>
