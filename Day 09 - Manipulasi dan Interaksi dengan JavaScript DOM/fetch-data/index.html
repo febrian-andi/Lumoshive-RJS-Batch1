@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch Data</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Random User List</h1>
+      </div>
+      <div class="search-bar">
+        <input id="search-input" placeholder="Search by name..." type="text" />
+        <button id="search-button" onclick="handleSearch()">Search</button>
+      </div>
+      <div class="loading" id="loading" style="display: block;">
+        <div class="loading-container">
+            <div>
+                <span class="loader"></span>
+                <p>Loading...</p>
+            </div>
+        </div>
+      </div>
+      <div class="user-list" id="user-container">
+        <!-- User list appears here -->
+      </div>
+      <div class="pagination">
+        <button id="prev-button" onclick="changePage(-1)">Previous</button>
+        <span id="page-number">Page 1</span>
+        <button id="next-button" onclick="changePage(1)">Next</button>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
