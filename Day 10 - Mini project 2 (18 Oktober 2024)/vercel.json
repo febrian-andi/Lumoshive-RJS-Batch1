@@ -1,9 +1,0 @@
-{
-  "redirects": [
-    {
-      "source": "https://fan4u.cloud/(.*)",
-      "destination": "https://www.fan4u.cloud/$1",
-      "permanent": true
-    }
-  ]
-}
