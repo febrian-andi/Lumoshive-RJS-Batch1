@@ -1,5 +1,9 @@
 {
   "redirects": [
-    { "source": "/(.*)", "destination": "https://www.fan4u.cloud/$1", "permanent": true }
+    {
+      "source": "https://fan4u.cloud/(.*)",  // Redirect only non-www to www on HTTPS
+      "destination": "https://www.fan4u.cloud/$1",
+      "permanent": true
+    }
   ]
 }
