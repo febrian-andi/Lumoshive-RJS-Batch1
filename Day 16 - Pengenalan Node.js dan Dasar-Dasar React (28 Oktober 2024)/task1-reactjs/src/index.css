@@ -1,0 +1,235 @@
+:root {
+  --primary-color: #ff3366;
+  --dark-blue: #12163f;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Header Styles */
+header {
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--dark-blue);
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--dark-blue);
+}
+
+.get-in-touch {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+  background: var(--dark-blue);
+  color: white;
+  padding: 3rem 5%;
+  text-align: center;
+}
+
+.hero h1 {
+  color: var(--primary-color);
+  font-size: 2.3rem;
+}
+
+.section-title {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+}
+
+.breadcrumb {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* About Section */
+.about-section {
+  padding: 4rem 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  background-color: rgb(247, 247, 247);
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.about-content h3 {
+  font-size: 2rem;
+  color: var(--dark-blue);
+  margin-bottom: 1rem;
+}
+
+.contact-container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.contact-icon {
+  color: var(--primary-color);
+  font-size: 2.2rem;
+  margin-right: 10px;
+  background-color: rgb(247, 247, 247);
+  padding: 10px;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+}
+
+.contact-text {
+  margin: 0px;
+}
+
+/* Team Section */
+.team-section {
+  padding: 4rem 5%;
+  text-align: center;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.team-member h4 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+/* CTA Section */
+.cta-section {
+  margin: 4rem auto;
+  max-width: 800px;
+  text-align: center;
+  padding: 3rem;
+  background: var(--dark-blue);
+  color: white;
+  border-radius: 8px;
+}
+
+.quote {
+  font-size: 1.8rem;
+}
+
+/* Footer */
+footer {
+  background: var(--dark-blue);
+  color: white;
+  padding: 4rem 5%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+footer h3 {
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.social-icon {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.email-input {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.submit-button {
+  background-color: var(--primary-color);
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  margin: 0 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  nav {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+  }
+}
