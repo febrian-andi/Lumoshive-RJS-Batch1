@@ -21,3 +21,14 @@ export const register = async (data) => {
   });
   return response.data;
 };
+
+export const queryAI = async (data, token) => {
+  const response = await axios.post(`${API_URL}/query`, data, {
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": "RJS1-202408",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return response.data;
+};

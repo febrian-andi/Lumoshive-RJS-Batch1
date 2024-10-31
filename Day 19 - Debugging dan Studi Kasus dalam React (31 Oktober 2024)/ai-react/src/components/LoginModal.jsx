@@ -61,8 +61,14 @@ export default function LoginModal({
                 type="submit"
                 disabled={loading}
               >
-                <i className="bi bi-shield-lock me-1"></i>
-                {isLogin ? "Login" : "Register"}
+                {loading ? (
+                  <span className="spinner-border spinner-border-sm me-2"></span>
+                ) : (
+                  <>
+                    <i className="bi bi-shield-lock me-1"></i>
+                    {isLogin ? "Login" : "Register"}
+                  </>
+                )}
               </button>
               <button
                 onClick={toogleLogin}

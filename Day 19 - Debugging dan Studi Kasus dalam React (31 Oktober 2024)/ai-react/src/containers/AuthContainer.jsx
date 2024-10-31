@@ -40,17 +40,16 @@ export default class AuthContainer extends Component {
     if (this.state.isLogin) {
       login(this.state.form)
       .then((res) => {
-        alert("Login success");
         this.setState({
           isLogin: true,
           error: null,
           form: { username: "", password: "" },
         });
         localStorage.setItem("token", res.accessToken);
-        window.location.reload();
+        this.props.setToken(res.accessToken);
       })
       .catch((err) => {
-        this.setState({ error: err.response.data.error });
+        this.setState({ error: err.response.data.error || "Login Failed"});
         console.log(this.state.error);
       })
       .finally(() => {
@@ -67,7 +66,7 @@ export default class AuthContainer extends Component {
           });
         })
         .catch((err) => {
-          this.setState({ error: err.response.data.error });
+          this.setState({ error: err.response.data.error || "Register Failed"});
           console.log(this.state.error);
         })
         .finally(() => {

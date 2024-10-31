@@ -4,7 +4,7 @@
 }
 
 .chat-message-cstm:nth-last-child(1) {
-    margin-bottom: 150px !important;
+    margin-bottom: 80px !important;
 }
 
 .rounded-user-cstm {
@@ -14,3 +14,4 @@
 .rounded-ai-cstm {
     border-radius: 15px 15px 15px 0;
 }
+
