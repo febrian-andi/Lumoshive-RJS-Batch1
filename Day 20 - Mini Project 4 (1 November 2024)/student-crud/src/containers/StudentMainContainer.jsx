@@ -60,7 +60,6 @@ export default class StudentMainContainer extends Component {
     getAllData()
       .then((res) => {
         this.setState({ students: res.data });
-        // console.log(res.data);
       })
       .catch((error) => {
         this.setState({ error: error.message || "Something went wrong!" });
@@ -130,8 +129,16 @@ export default class StudentMainContainer extends Component {
         this.hanldeGetAllStudents();
       })
       .catch((error) => {
-        this.setState({ error: error.message || "Something went wrong!" });
-        console.error(error);
+        if (error.response && error.response.status === 400) {
+          const errors = {};
+          error.response.data.data.forEach((err) => {
+            errors[err.path] = err.msg;
+          });
+          this.setState({ validationErrors: errors });
+        } else {
+          this.setState({ error: error.message || "Something went wrong!" });
+          console.error(error);
+        }
       })
       .finally(() => {
         this.setState({ loading: false });
