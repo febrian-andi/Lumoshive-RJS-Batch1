@@ -227,6 +227,14 @@ body {
   background-color: var(--primary);
 }
 
+.btn-search {
+  background-color: var(--tertiary);
+}
+
+.btn-search:hover {
+  background-color: #ca55c0;
+}
+
 .swal2-popup {
   box-shadow: 4px 4px 0 var(--dark);
   border: 3px solid var(--dark);

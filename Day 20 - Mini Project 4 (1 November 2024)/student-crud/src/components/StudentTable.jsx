@@ -31,7 +31,7 @@ function StudentRow({ student, index, onDelete, toogleModalForm, toogleModalDeta
         </button>
         <button
           onClick={() => toogleModalForm(true, student)}
-          className="neo-button btn-update mx-2"
+          className="neo-button btn-update mx-2 my-2 my-md-0"
         >
           <i className="bi bi-pencil"></i>
         </button>

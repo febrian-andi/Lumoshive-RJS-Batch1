@@ -42,3 +42,13 @@ export const updateData = async (id, student) => {
   });
   return response.data;
 };
+
+export const searchData = async (name) => {
+  const response = await axios.get(`${API_URL}/students?find=${name}`, {
+    headers: {
+      "Content-Type": "application/json",
+      "api-key": API_KEY,
+    },
+  });
+  return response.data;
+};

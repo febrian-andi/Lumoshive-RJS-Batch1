@@ -6,6 +6,7 @@ export default function StudentForm({
   onChange,
   formStudent,
   isEdit,
+  error,
 }) {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,9 +16,11 @@ export default function StudentForm({
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <div className={`modal-header ${
+        <div
+          className={`modal-header ${
             isEdit ? "modal-header-update" : "modal-header-add"
-          }`}>
+          }`}
+        >
           {isEdit ? (
             <h5 className="modal-title fw-bold">EDIT STUDENT</h5>
           ) : (
@@ -51,6 +54,9 @@ export default function StudentForm({
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label className="form-label fw-bold">NIM</label>
+              <sup className="m-0" style={{ fontSize: "11px" }}>
+                *must be numbers
+              </sup>
               <input
                 type="text"
                 inputMode="numeric"
@@ -113,6 +119,9 @@ export default function StudentForm({
             </div>
             <div className="mb-3">
               <label className="form-label fw-bold">YEAR</label>
+              <sup className="m-0" style={{ fontSize: "11px" }}>
+                *2000-2024
+              </sup>
               <input
                 type="text"
                 inputMode="numeric"
@@ -137,14 +146,32 @@ export default function StudentForm({
             </div>
             <div className="mb-3">
               <label className="form-label fw-bold">ADDRESS</label>
+              <sup className="m-0" style={{ fontSize: "11px" }}>
+                *minimum 20 characters
+              </sup>
               <textarea
                 className="form-control neo-shadow"
                 name="address"
                 value={student.address}
                 onChange={onChange}
+                style={{ height: "100px" }}
                 required
               ></textarea>
+              <p className="text-muted text-end mt-1">
+                {student.address.length} characters
+              </p>
             </div>
+            {Object.keys(error).length > 0 && (
+              <div className="alert alert-danger p-2" role="alert">
+                <ul>
+                  {Object.entries(error).map(([key, value]) => (
+                    <li key={key}>
+                      {value}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <div className="modal-footer">
               {isEdit ? (
                 <button type="submit" className="neo-button update-btn">

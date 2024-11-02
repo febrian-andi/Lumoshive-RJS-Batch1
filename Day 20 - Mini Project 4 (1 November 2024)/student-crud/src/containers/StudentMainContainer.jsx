@@ -11,6 +11,7 @@ export default class StudentMainContainer extends Component {
     modalDetail: false,
     loading: false,
     error: null,
+    validationErrors: {},
     isEdit: false,
     students: [],
     currentStudent: {
@@ -25,6 +26,7 @@ export default class StudentMainContainer extends Component {
   };
 
   toogleModalForm = (isEdit = false, student = null) => {
+    this.setState({ validationErrors: {} });
     if (isEdit && student) {
       this.setState({ isEdit: isEdit, currentStudent: student });
     } else {
@@ -94,8 +96,16 @@ export default class StudentMainContainer extends Component {
         this.hanldeGetAllStudents();
       })
       .catch((error) => {
-        this.setState({ error: error.message || "Something went wrong!" });
-        console.error(error);
+        if (error.response && error.response.status === 400) {
+          const errors = {};
+          error.response.data.data.forEach((err) => {
+            errors[err.path] = err.msg;
+          });
+          this.setState({ validationErrors: errors });
+        } else {
+          this.setState({ error: error.message || "Something went wrong!" });
+          console.error(error);
+        }
       })
       .finally(() => {
         this.setState({ loading: false });
@@ -129,7 +139,7 @@ export default class StudentMainContainer extends Component {
   };
 
   handleFormStudent = () => {
-    this.setState({ loading: true, error: null });
+    this.setState({ loading: true, error: null, validationErrors: {} });
     if (this.state.isEdit) {
       this.handleUpdateData();
     } else {
@@ -137,11 +147,28 @@ export default class StudentMainContainer extends Component {
     }
   };
 
+  setStudents = (students) => {
+    this.setState({ students });
+  };
+
+  setLoading = (loading) => {
+    this.setState({ loading });
+  };
+
+  setError = (error) => {
+    this.setState({ error });
+  };
+
   render() {
     return (
       <>
         <div className="container">
-          <StudentHeaderContainer toogleModalForm={this.toogleModalForm} />
+          <StudentHeaderContainer
+            toogleModalForm={this.toogleModalForm}
+            setStudents={this.setStudents}
+            setLoading={this.setLoading}
+            setError={this.setError}
+          />
           <StudentListContainer
             toogleModalForm={this.toogleModalForm}
             toogleModalDetail={this.toogleModalDetail}
@@ -164,6 +191,7 @@ export default class StudentMainContainer extends Component {
             onChange={this.handleInputChange}
             formStudent={this.handleFormStudent}
             isEdit={this.state.isEdit}
+            error={this.state.validationErrors}
           />
         )}
       </>
