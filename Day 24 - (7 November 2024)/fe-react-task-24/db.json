@@ -1,0 +1,24 @@
+{
+  "activities": [
+    {
+      "id": "1",
+      "title": "Workout",
+      "description": "Complete a 30-minute workout session"
+    },
+    {
+      "id": "2",
+      "title": "Study React",
+      "description": "Spend an hour studying React fundamentals"
+    },
+    {
+      "id": "d60a",
+      "title": "Study Tailwind CSS",
+      "description": "Learn about how to use Tailwind CSS"
+    },
+    {
+      "id": "350a",
+      "title": "Playing Game",
+      "description": "Take a break by playing games"
+    }
+  ]
+}
