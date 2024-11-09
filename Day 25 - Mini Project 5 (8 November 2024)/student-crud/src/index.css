@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300..700&display=swap");
+
+:root {
+  --primary: #ff6b6b;
+  --secondary: #4ecdc4;
+  --tertiary: #ff69f3;
+  --accent: #ffe66d;
+  --dark: #2c2c2c;
+  --background: #f7f7f7;
+}
+
+body {
+  background-color: var(--background);
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.neo-shadow {
+  box-shadow: 4px 4px 0 var(--dark);
+  border: 3px solid var(--dark);
+}
+
+.neo-button {
+  background-color: var(--tertiary);
+  border: 3px solid var(--dark);
+  box-shadow: 4px 4px 0 var(--dark);
+  border-radius: 0;
+  transition: all 0.2s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.neo-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--dark);
+}
+
+.neo-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--dark);
+}
+
+.btn-save {
+  background-color: var(--tertiary);
+}
+
+.btn-update {
+  background-color: var(--accent);
+}
+
+.btn-cancel {
+  background-color: #ddd;
+}
+
+.navbar {
+  background-color: var(--primary) !important;
+  border-bottom: 3px solid var(--dark);
+  padding: 1rem;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--dark) !important;
+}
+
+.card {
+  background-color: white;
+  border-radius: 0;
+  margin: 2rem 0;
+}
+
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table th {
+  background-color: var(--secondary);
+  color: var(--dark);
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 3px solid var(--dark);
+}
+
+.table td {
+  border: 3px solid var(--dark);
+  padding: 1rem;
+}
+
+.search-container {
+  background-color: var(--accent);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.form-control, .form-select {
+  border: 3px solid var(--dark);
+  border-radius: 0;
+  padding: 0.5rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus, .form-select:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.1);
+  border-color: var(--secondary);
+  outline: none;
+  transform: translateY(2px);
+}
+
+.input-group-text {
+  background-color: white;
+  border: 3px solid var(--dark);
+  border-radius: 0;
+}
+
+.form-header {
+  border-bottom: 3px solid var(--dark);
+  padding: 10px;
+}
+
+.form-header-add {
+  background-color: var(--tertiary);
+}
+
+.form-header-update {
+  background-color: var(--accent);
+}
+
+.form-header-detail {
+  background-color: var(--secondary);
+}
+
+.form-footer {
+  margin-top: 25px;
+  padding-top: 15px;
+  padding-right: 15px;
+  border-top: 3px solid var(--dark);
+}
+
+.form-select-language {
+  background-color: white;;
+  border: 0;
+  padding: 4px 8px;
+  color: var(--dark);
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 50px;
+  font-size: 13px;
+}
+
+.btn-detail {
+  background-color: var(--secondary);
+}
+
+.btn-update {
+  background-color: var(--accent);
+}
+
+.btn-delete {
+  background-color: var(--primary);
+}
+
+.btn-search {
+  background-color: var(--tertiary);
+}
+
+.btn-search:hover {
+  background-color: #ca55c0;
+}
+
+.swal2-popup {
+  box-shadow: 4px 4px 0 var(--dark);
+  border: 3px solid var(--dark);
+  border: 3px solid var(--dark);
+  border-radius: 0;
+}
+
+.swal2-title {
+  color: #000000;
+}
+
+.swal2-content {
+  color: #ffffff;
+}
+
