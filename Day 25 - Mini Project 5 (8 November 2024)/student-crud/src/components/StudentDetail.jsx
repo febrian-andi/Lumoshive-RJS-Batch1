@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
+import PropTypes from "prop-types";
 
 export default function StudentDetail({ student }) {
   const { language } = useLanguage();
@@ -48,3 +49,7 @@ export default function StudentDetail({ student }) {
       </div>
   );
 }
+
+StudentDetail.propTypes = {
+  student: PropTypes.object.isRequired,
+};

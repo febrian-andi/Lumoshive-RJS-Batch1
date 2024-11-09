@@ -1,17 +1,20 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 import useFormInput from "../hooks/useFormInput";
 import { useLanguage } from "../contexts/LanguageContext";
 
 
-export default function StudentSearch() {
+export default function StudentSearch({ search, setSearch }) {
+  const navigate = useNavigate();
   const { language } = useLanguage();
-  const { values, handleChange } = useFormInput({
-    name: "",
-  });
+  const { values, handleChange } = useFormInput({ name: search });
 
   const handleSearch = (e) => {
     e.preventDefault();
-    setSearchQuery(values.name);
+    setSearch(values.name);
+    const query = values.name ? `?find=${values.name}` : '';
+    navigate(query);
   };
 
   return (
@@ -30,3 +33,8 @@ export default function StudentSearch() {
     </form>
   );
 }
+
+StudentSearch.propTypes = {
+  search: PropTypes.string.isRequired,
+  setSearch: PropTypes.func.isRequired,
+};

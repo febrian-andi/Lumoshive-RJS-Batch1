@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import useFormInput from "../hooks/useFormInput";
 import useAddData from "../hooks/useAddData";
@@ -107,7 +108,7 @@ export default function StudentForm({ isEdit, studentData = [] }) {
             onChange={handleChange}
             required
           >
-            <option value="" selected disabled>
+            <option value="" disabled>
               {language === "english" ? "SELECT GENDER" : "PILIH JENIS KELAMIN"}
             </option>
             <option value="male">{language === "english" ? "MALE" : "LAKI-LAKI" }</option>
@@ -220,3 +221,8 @@ export default function StudentForm({ isEdit, studentData = [] }) {
     </div>
   );
 }
+
+StudentForm.propTypes = {
+  isEdit: PropTypes.bool.isRequired,
+  studentData: PropTypes.object.isRequired,
+};

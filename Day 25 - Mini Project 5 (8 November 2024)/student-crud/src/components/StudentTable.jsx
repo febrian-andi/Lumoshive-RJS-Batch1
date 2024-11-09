@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import useDeleteData from "../hooks/useDeleteData";
 import { useLanguage } from "../contexts/LanguageContext";
@@ -98,3 +99,10 @@ export default function StudentTable({ students, loading, error, fetchData }) {
     );
   return <StudentTableContent students={students} fetchData={fetchData} language={language}/>;
 }
+
+StudentTable.propTypes = {
+  students: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
+  error: PropTypes.string,
+  fetchData: PropTypes.func.isRequired,
+};

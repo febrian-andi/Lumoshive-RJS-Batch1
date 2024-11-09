@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useLanguage } from "../contexts/LanguageContext";
 import { useTheme } from "../contexts/ThemeContext";
 
