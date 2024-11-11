@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import ItemListContainer from "./containers/ItemListContainer";
+import ItemListContainer from "./components/ItemList";
 import articleData from "./data/articleData";
 import ButtonScrollUp from "./components/ButtonScrollUp";
 

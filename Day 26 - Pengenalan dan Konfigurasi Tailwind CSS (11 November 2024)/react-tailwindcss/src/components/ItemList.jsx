@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import ItemCard from "../components/ItemCard";
+import ItemCard from "./ItemCard";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 
-function ItemListContainer({ category, article }) {
+function ItemList({ category, article }) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 3;
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -45,9 +45,9 @@ function ItemListContainer({ category, article }) {
   );
 }
 
-export default ItemListContainer;
+export default ItemList;
 
-ItemListContainer.propTypes = {
+ItemList.propTypes = {
   category: PropTypes.string.isRequired,
   article: PropTypes.array.isRequired,
 };

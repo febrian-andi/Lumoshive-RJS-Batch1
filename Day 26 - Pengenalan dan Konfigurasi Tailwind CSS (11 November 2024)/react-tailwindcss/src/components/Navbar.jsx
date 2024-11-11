@@ -3,6 +3,11 @@ import { Bars3Icon } from "@heroicons/react/24/solid";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState("home");
+
+  const handleMenuClick = (menu) => {
+    setActiveMenu(menu);
+  };
 
   return (
     <nav className="mx-auto py-4 xl:flex justify-between items-center">
@@ -22,48 +27,110 @@ function Navbar() {
         </button>
       </div>
       <div
-        className={`${
-          isOpen ? "block" : "hidden"
-        } w-full md:block md:w-auto`}
+        className={`${isOpen ? "block" : "hidden"} w-full md:block md:w-auto`}
       >
         <ul className="flex justify-center flex-col md:flex-row space-x-0 mt-4 md:mt-0">
           <li>
-            <a href="#" className="font-bold text-sm hover:text-green-500 block px-3 py-2">
+            <a
+              href="#"
+              onClick={() => handleMenuClick("home")}
+              className={
+                activeMenu === "home"
+                  ? "font-bold text-sm border-b-2 border-sky-500 block px-3 py-2"
+                  : "font-bold text-sm hover:border-b-2 hover:border-sky-500 block px-3 py-2"
+              }
+            >
               HOME
             </a>
           </li>
           <li>
-            <a href="#" className="font-bold text-sm hover:text-green-500 block px-3 py-2">
+            <a
+              href="#"
+              onClick={() => handleMenuClick("company")}
+              className={
+                activeMenu === "company"
+                  ? "font-bold text-sm border-b-2 border-sky-500 block px-3 py-2"
+                  : "font-bold text-sm hover:border-b-2 hover:border-sky-500 block px-3 py-2"
+              }
+            >
               COMPANY
             </a>
           </li>
           <li>
-            <a href="#" className="font-bold text-sm hover:text-green-500 block px-3 py-2">
+            <a
+              href="#"
+              onClick={() => handleMenuClick("community")}
+              className={
+                activeMenu === "community"
+                  ? "font-bold text-sm border-b-2 border-sky-500 block px-3 py-2"
+                  : "font-bold text-sm hover:border-b-2 hover:border-sky-500 block px-3 py-2"
+              }
+            >
               COMMUNITY
             </a>
           </li>
           <li>
-            <a href="#" className="font-bold text-sm hover:text-green-500 block px-3 py-2">
+            <a
+              href="#"
+              onClick={() => handleMenuClick("stories")}
+              className={
+                activeMenu === "stories"
+                  ? "font-bold text-sm border-b-2 border-sky-500 block px-3 py-2"
+                  : "font-bold text-sm hover:border-b-2 hover:border-sky-500 block px-3 py-2"
+              }
+            >
               STORIES
             </a>
           </li>
           <li>
-            <a href="#" className="font-bold text-sm hover:text-green-500 block px-3 py-2">
+            <a
+              href="#"
+              onClick={() => handleMenuClick("insight")}
+              className={
+                activeMenu === "insight"
+                  ? "font-bold text-sm border-b-2 border-sky-500 block px-3 py-2"
+                  : "font-bold text-sm hover:border-b-2 hover:border-sky-500 block px-3 py-2"
+              }
+            >
               INSIGHT
             </a>
           </li>
           <li>
-            <a href="#" className="font-bold text-sm hover:text-green-500 block px-3 py-2">
+            <a
+              href="#"
+              onClick={() => handleMenuClick("toplist")}
+              className={
+                activeMenu === "toplist"
+                  ? "font-bold text-sm border-b-2 border-sky-500 block px-3 py-2"
+                  : "font-bold text-sm hover:border-b-2 hover:border-sky-500 block px-3 py-2"
+              }
+            >
               TOP LIST
             </a>
           </li>
           <li>
-            <a href="#" className="font-bold text-sm hover:text-green-500 block px-3 py-2">
+            <a
+              href="#"
+              onClick={() => handleMenuClick("newsroom")}
+              className={
+                activeMenu === "newsroom"
+                  ? "font-bold text-sm border-b-2 border-sky-500 block px-3 py-2"
+                  : "font-bold text-sm hover:border-b-2 hover:border-sky-500 block px-3 py-2"
+              }
+            >
               NEWSROOM
             </a>
           </li>
           <li>
-            <a href="#" className="font-bold text-sm hover:text-green-500 block px-3 py-2">
+            <a
+              href="#"
+              onClick={() => handleMenuClick("kalkupedia")}
+              className={
+                activeMenu === "kalkupedia"
+                  ? "font-bold text-sm border-b-2 border-sky-500 block px-3 py-2"
+                  : "font-bold text-sm hover:border-b-2 hover:border-sky-500 block px-3 py-2"
+              }
+            >
               KALKUPEDIA
             </a>
           </li>
