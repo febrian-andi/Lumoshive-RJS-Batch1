@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Pagination Bullets */
+.swiper-cstm .swiper-pagination-bullet {
+  border: 1px solid #ff3e54;
+  background-color: transparent;
+  opacity: 1;
+  width: 16px;
+  height: 16px;
+  margin: 0 5px;
+}
+
+.swiper-cstm .swiper-pagination-bullet-active {
+  background-color: #ff3e54;
+  width: 16px;
+  height: 16px;
+}
+
+/* Effect for Non-Active Slides */
+.swiper-slide {
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+.swiper-slide:not(.swiper-slide-active) {
+  transform: scale(0.9); /* Scale down for non-active slides */
+  filter: blur(4px); /* Blur effect for non-active slides */
+}
+
+.swiper-slide-active {
+  transform: scale(1); /* Full scale for the active slide */
+  filter: blur(0); /* Remove blur for the active slide */
+}
+
+/* Custom pagination untuk hanya menampilkan tiga indikator */
+.swiper-cstm .swiper-pagination-bullet {
+  border: 1px solid #ff3e54;
+  background-color: transparent;
+  opacity: 1;
+  width: 16px;
+  height: 16px;
+  margin: 0 5px;
+}
+
+.swiper-cstm .swiper-pagination-bullet:nth-child(1),
+.swiper-cstm .swiper-pagination-bullet:nth-child(2),
+.swiper-cstm .swiper-pagination-bullet:nth-last-child(1) {
+  display: inline-block;
+}
+
+.swiper-cstm .swiper-pagination-bullet-active {
+  background-color: #ff3e54;
+  width: 16px;
+  height: 16px;
+}
+
+.swiper-cstm
+  .swiper-pagination-bullet:not(:nth-child(1)):not(:nth-child(2)):not(
+    :nth-last-child(1)
+  ) {
+  display: none;
+}
