@@ -9,7 +9,7 @@ import useUpdateData from "./hooks/useUpdateData";
 const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const toggleModal = () => setIsModalOpen(!isModalOpen);
-  
+
   const { data, loading, error, fetchData } = useFetchData("/tasks");
   const { updateData } = useUpdateData("/tasks");
 
@@ -27,11 +27,12 @@ const App = () => {
     if (
       destination.droppableId === source.droppableId &&
       destination.index === source.index
-    ) return;
+    )
+      return;
 
-    const task = data.find((t) => t.id.toString() === draggableId);
+    const task = data.find((item) => item.id === draggableId);
     if (!task) return;
-    
+
     const updatedTask = {
       ...task,
       status: destination.droppableId,
@@ -53,20 +54,35 @@ const App = () => {
             Loading...
           </div>
         )}
-        {error && <div className="text-red-500 text-center">{error.message}</div>}
+
+        {error && (
+          <div className="text-red-500 text-center">{error.message}</div>
+        )}
         {!loading && error === null && data?.length === 0 && (
           <div className="text-center">No data found</div>
         )}
+
         {!loading && error === null && data?.length > 0 && (
           <DragDropContext onDragEnd={handleDragEnd}>
             <div className="flex space-x-4">
-              <KanbanColumn title="Backlog" status="backlog" tasks={tasksByStatus.backlog} />
+              <KanbanColumn
+                title="Backlog"
+                status="backlog"
+                tasks={tasksByStatus.backlog}
+                fetchData={fetchData}
+              />
               <KanbanColumn
                 title="On Progress"
                 status="on-progress"
                 tasks={tasksByStatus["on-progress"]}
+                fetchData={fetchData}
               />
-              <KanbanColumn title="Done" status="done" tasks={tasksByStatus.done} />
+              <KanbanColumn
+                title="Done"
+                status="done"
+                tasks={tasksByStatus.done}
+                fetchData={fetchData}
+              />
             </div>
           </DragDropContext>
         )}

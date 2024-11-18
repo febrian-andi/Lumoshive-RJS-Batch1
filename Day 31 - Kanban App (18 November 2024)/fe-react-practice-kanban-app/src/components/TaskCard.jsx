@@ -1,18 +1,16 @@
-import React, { memo } from "react";
+import React from "react";
 import { Draggable } from "react-beautiful-dnd";
 import useDeleteData from "../hooks/useDeleteData";
 
-const TaskCard = memo(({ task, index, fetchData }) => {
+const TaskCard = ({ task, index, fetchData }) => {
   const { deleteData } = useDeleteData("/tasks");
 
   const handleDelete = (id) => {
-    deleteData(id, () => {
-      fetchData();
-    });
+    deleteData(id, fetchData);
   };
 
   return (
-    <Draggable draggableId={String(task.id)} index={index}>
+    <Draggable draggableId={task.id} index={index}>
       {(provided) => (
         <div
           ref={provided.innerRef}
@@ -33,8 +31,6 @@ const TaskCard = memo(({ task, index, fetchData }) => {
       )}
     </Draggable>
   );
-});
-
-TaskCard.displayName = "TaskCard";
+};
 
 export default TaskCard;
