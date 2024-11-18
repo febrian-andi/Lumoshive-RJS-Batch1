@@ -1,47 +1,59 @@
-# Kanban Board UI
-A simple Kanban Board UI built with React.js, Vite, and DaisyUI. This project focuses on creating a visually appealing interface for task management with columns for Backlog, On Progress, and Done tasks. It includes a modal for adding new tasks using CKEditor 5.
+# Kanban App
+
+This is a simple Kanban board application for task management built with React.js and powered by `react-beautiful-dnd` for drag-and-drop functionality. The app allows users to organize tasks across three different status columns: **Backlog**, **On Progress**, and **Done**. The app's data is stored locally using the `json-server` library, simulating a REST API.
+
 ## Features
-- Kanban Board with three columns:
-    - Backlog
-    - On Progress
-    - Done
-- Task Modal for adding tasks with:
-- Title
-    - Description (using CKEditor 5)
-    - Start Date and End Date
-    - Task Type (Development, Testing, Design)
-- Responsive Design using DaisyUI and TailwindCSS.
-## Technologies Used
-- React.js: For building the user interface.
-- Vite: As the build tool for fast development.
-- DaisyUI: For pre-styled and customizable UI components.
-- TailwindCSS: For utility-first CSS styling.
-- CKEditor 5: For rich text editing in the task description.
+
+- **Drag-and-Drop**: Easily move tasks between columns (Backlog, On Progress, Done).
+- **Task Management**: Add, and delete tasks.
+
+## Tech Stack
+
+- **Frontend**: React.js
+- **Drag-and-Drop**: `react-beautiful-dnd`
+- **Data Storage**: `json-server`
+
 ## Installation
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/kanban-board-ui.git
-cd kanban-board-ui
+
+To get started with this project, follow the steps below:
+
+### 1. Clone the repository
+First, clone the repository to your local machine. Then go to the folder "Day 31 - Kanban App (18 November 2024) /fe-react-practice-kanban-app"
+
+### 2. Install dependencies
+Run the following command to install all the necessary dependencies:
 ```
-2. Install dependencies:
-```bash
 npm install
 ```
-3. Start the development server:
-```bash
+
+### 3. Configure the environment
+You need to configure the .env file to set the correct endpoint for your JSON server.
+
+1. Rename the file .env.example to .env.
+2. Open the .env file and set the VITE_BASE_URL variable to the URL of your JSON server (usually http://localhost:3000).
+
+Example:
+```
+VITE_BASE_URL=http://localhost:3000
+```
+
+### 4. Start the JSON Server
+In order to run the app, you need to have a JSON server running to handle task data. You can start the JSON server with the following command:
+```
+npx json-server db.json
+```
+This will start the JSON server and you should see it running on http://localhost:3000.
+
+### 5. Start the React app
+Now, start the React development server:
+```
 npm run dev
 ```
-## Project Structure
-```bash
-src/
-├── components/
-│   ├── AddTaskModal.jsx  // Modal for adding tasks
-│   ├── KanbanColumn.jsx  // Columns for task statuses
-│   ├── Navbar.jsx        // Top navigation bar
-│   ├── TaskCard.jsx      // Individual task cards
-├── App.jsx               // Main application component
-├── main.jsx              // Entry point for the app
+The app will be running at http://localhost:5173 (or another port specified by Vite).
+
+### 6. Open the app
+You can now open your browser and navigate to:
 ```
-## Future Enhancements
-- Drag-and-Drop Support: Allow tasks to be moved between columns.
-- API Integration: Connect the board to a backend service for persistent storage.
+http://localhost:5173
+```
+You should see the Kanban board in action. You can add tasks, move them between columns, and the data will be persisted in your JSON server.
