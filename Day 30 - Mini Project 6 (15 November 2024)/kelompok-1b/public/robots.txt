@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kelompok-1b.vercel.app/sitemap.xml
