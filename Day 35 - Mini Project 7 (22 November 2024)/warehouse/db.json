@@ -8,11 +8,11 @@
       "stock": 110
     },
     {
-      "id": "8992745120651",
+      "id": "8995108500038",
       "name": "Wireless Speaker",
       "description": "Ergonomic wireless mouse with high precision.",
       "price": 150000,
-      "stock": 110
+      "stock": 120
     }
   ],
   "logs": [
@@ -31,6 +31,15 @@
       "quantity": 10,
       "note": "Restocked due to high demand",
       "date": "2024-11-22T10:00:00Z"
+    },
+    {
+      "id": "2f80",
+      "product_id": "8995108500038",
+      "type": "stock_in",
+      "quantity": 10,
+      "note": "Pembelian bulan November",
+      "date": "2024-11-23",
+      "finalStock": 120
     }
   ]
 }
