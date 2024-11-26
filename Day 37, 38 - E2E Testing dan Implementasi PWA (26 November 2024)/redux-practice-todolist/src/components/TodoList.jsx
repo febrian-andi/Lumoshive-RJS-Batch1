@@ -40,11 +40,11 @@ const TodoList = () => {
   //   return <div className="alert alert-danger text-center">Error</div>;
   // }
 
-  if (todos.length === 0) {
-    return (
-      <div className="alert alert-secondary text-center">No todos found.</div>
-    );
-  }
+  // if (todos.length === 0) {
+  //   return (
+  //     <div className="alert alert-secondary text-center">No todos found.</div>
+  //   );
+  // }
 
   return (
     <ul className="list-group">
@@ -66,12 +66,14 @@ const TodoList = () => {
           </span>
           <div>
             <button
+              cy-data="edit-button"
               onClick={(e) => handleCurrentTodo(todo, e)}
               className="btn btn-warning btn-sm me-2"
             >
               {language === "english" ? "Edit" : "Ubah"}
             </button>
             <button
+              cy-data="delete-button"
               onClick={(e) => handleDeleteTodo(todo.id, e)}
               className="btn btn-danger btn-sm"
             >
