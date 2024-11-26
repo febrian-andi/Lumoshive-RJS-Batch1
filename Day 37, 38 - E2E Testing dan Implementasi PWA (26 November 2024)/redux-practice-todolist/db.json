@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "text": "todo1",
+      "completed": false
+    },
+    {
+      "id": "2",
+      "text": "todo2",
+      "completed": false
+    },
+    {
+      "id": "3",
+      "text": "todo3",
+      "completed": false
+    },
+    {
+      "id": "3f59befb-87a3-4781-bd3c-756e9b472ed8",
+      "text": "todo4",
+      "completed": false
+    }
+  ]
+}
